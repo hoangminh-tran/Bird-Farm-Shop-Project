@@ -1,0 +1,24 @@
+# Spring Boot
+/target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# IntelliJ IDEA
+.idea/
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Logs
+logs/
+*.log
+
+# Compiled files
+bin/
+*.class
+
+# Dependencies
+# Maven
+log/
+target/

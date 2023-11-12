@@ -1,0 +1,29 @@
+version: "3.8"
+
+services:
+  mysqldb:
+    container_name: mysqldb
+    image: mysql
+    ports:
+      - "3305:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD : root
+      MYSQL_DATABASE: employee_db
+    networks:
+      springboot-mysql-net:
+
+  bird_farm_shop_project:
+    container_name: bird_farm_shop_project
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysqldb
+    networks:
+      springboot-mysql-net:
+    restart: on-failure
+
+networks:
+  springboot-mysql-net:
